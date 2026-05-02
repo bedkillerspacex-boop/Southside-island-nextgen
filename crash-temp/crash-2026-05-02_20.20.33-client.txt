@@ -1,0 +1,298 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 2026-05-02 20:20:33
+Description: Unexpected error
+
+java.lang.NoClassDefFoundError: kotlin/jvm/functions/Function0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.defineClassFwd(KnotClassLoader.java:165)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:368)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:231)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at knot//org.jetbrains.skia.impl.Cleaner.<init>(Managed.jvm.kt:129)
+	at knot//org.jetbrains.skia.impl.Managed.<clinit>(Managed.jvm.kt:41)
+	at knot//com.southside.dynamicisland.render.SkijaRenderer.ensureInitialized(SkijaRenderer.java:87)
+	at knot//com.southside.dynamicisland.render.SkijaRenderer.beginFrame(SkijaRenderer.java:45)
+	at knot//com.southside.dynamicisland.render.IslandRenderer.render(IslandRenderer.java:240)
+	at knot//com.southside.dynamicisland.DynamicIslandMod.lambda$onInitializeClient$3(DynamicIslandMod.java:127)
+	at knot//net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback.lambda$static$0(HudRenderCallback.java:32)
+	at knot//net.minecraft.class_329.handler$bcc000$fabric-rendering-v1$render(class_329.java:3083)
+	at knot//net.minecraft.class_329.method_1753$mixinextras$wrapped$129(class_329.java:235)
+	at knot//net.minecraft.class_329.mixinextras$bridge$method_1753$mixinextras$wrapped$129$130(class_329.java)
+	at knot//net.minecraft.class_329.wrapMethod$bjf000$iris$handleHudHidingScreens(class_329.java:3564)
+	at knot//net.minecraft.class_329.method_1753(class_329.java)
+	at knot//net.minecraft.class_757.method_3192(class_757.java:533)
+	at knot//net.minecraft.class_310.method_1523(class_310.java:1341)
+	at knot//net.minecraft.class_310.method_1514(class_310.java:922)
+	at knot//net.minecraft.client.main.Main.main(Main.java:267)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:514)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at oolloo.jlw.Wrapper.invokeMain(Wrapper.java:112)
+	at oolloo.jlw.Wrapper.main(Wrapper.java:105)
+Caused by: java.lang.ClassNotFoundException: kotlin.jvm.functions.Function0
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:239)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 31 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.defineClassFwd(KnotClassLoader.java:165)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:368)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:231)
+	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at knot//org.jetbrains.skia.impl.Cleaner.<init>(Managed.jvm.kt:129)
+	at knot//org.jetbrains.skia.impl.Managed.<clinit>(Managed.jvm.kt:41)
+	at knot//com.southside.dynamicisland.render.SkijaRenderer.ensureInitialized(SkijaRenderer.java:87)
+	at knot//com.southside.dynamicisland.render.SkijaRenderer.beginFrame(SkijaRenderer.java:45)
+	at knot//com.southside.dynamicisland.render.IslandRenderer.render(IslandRenderer.java:240)
+	at knot//com.southside.dynamicisland.DynamicIslandMod.lambda$onInitializeClient$3(DynamicIslandMod.java:127)
+	at knot//net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback.lambda$static$0(HudRenderCallback.java:32)
+	at knot//net.minecraft.class_329.handler$bcc000$fabric-rendering-v1$render(class_329.java:3083)
+	at knot//net.minecraft.class_329.method_1753$mixinextras$wrapped$129(class_329.java:235)
+	at knot//net.minecraft.class_329.mixinextras$bridge$method_1753$mixinextras$wrapped$129$130(class_329.java)
+	at knot//net.minecraft.class_329.wrapMethod$bjf000$iris$handleHudHidingScreens(class_329.java:3564)
+	at knot//net.minecraft.class_329.method_1753(class_329.java)
+
+-- Uptime --
+Details:
+	JVM uptime: 50.001s
+	Wall uptime: 31.320s
+	High-res time: 28.419s
+	Client ticks: 189 ticks / 9.450s
+Stacktrace:
+	at knot//net.minecraft.class_310.method_1587(class_310.java:2371)
+	at knot//net.minecraft.class_310.method_54580(class_310.java:991)
+	at knot//net.minecraft.class_310.method_1514(class_310.java:946)
+	at knot//net.minecraft.client.main.Main.main(Main.java:267)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:514)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at oolloo.jlw.Wrapper.invokeMain(Wrapper.java:112)
+	at oolloo.jlw.Wrapper.main(Wrapper.java:105)
+
+-- Affected level --
+Details:
+	All players: 1 total; [class_746['Bed_Spacekiller_'/13, l='ClientLevel', x=369.17, y=76.00, z=606.05]]
+	Chunk stats: 441, 18
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (160,71,496), Section: (at 0,7,0 in 10,4,31; chunk contains blocks 160,-64,496 to 175,319,511), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 1 game time, 8000 day time
+	Server brand: fabric
+	Server type: Integrated singleplayer server
+	Tracked entity count: 14
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, fabric, animatica, appleskin, autoreconnectrf, cloth-config, com_viaversion_viaaprilfools-common, com_viaversion_viabackwards-common, com_viaversion_viaversion-common, cubes-without-borders, dynamic-island, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, ias, iris, modmenu, net_raphimc_viabedrock, net_raphimc_vialegacy, nuit, nuit_interop, placeholder-api, sodium, southside, uuidget, viafabricplus, viafabricplus-visuals, yet_another_config_lib_v3, file/[1.21.4]32x顾城材质V16.zip, file/§cCozyUI§b+ §7v1.9 §0.zip
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.4
+	Minecraft Version ID: 1.21.4
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.7, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Microsoft
+	Memory: 210523888 bytes (200 MiB) / 759169024 bytes (724 MiB) up to 2147483648 bytes (2048 MiB)
+	CPUs: 20
+	Processor Vendor: GenuineIntel
+	Processor Name: 13th Gen Intel(R) Core(TM) i7-13700H
+	Identifier: Intel64 Family 6 Model 186 Stepping 2
+	Microarchitecture: Raptor Lake
+	Frequency (GHz): 2.92
+	Number of physical packages: 1
+	Number of physical CPUs: 14
+	Number of logical CPUs: 20
+	Graphics card #0 name: NVIDIA GeForce RTX 4060 Laptop GPU
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8188.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9636
+	Graphics card #1 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #1 vendor: Intel Corporation
+	Graphics card #1 VRAM (MiB): 2048.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.101.6790
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 4.80
+	Memory slot #0 type: DDR5
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 4.80
+	Memory slot #1 type: DDR5
+	Virtual memory max (MiB): 31309.55
+	Virtual memory used (MiB): 24776.08
+	Swap memory total (MiB): 15299.14
+	Swap memory used (MiB): 4981.83
+	Space in storage for jna.tmpdir (MiB): available: 14648.79, total: 238127.00
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): available: 14648.79, total: 238127.00
+	Space in storage for io.netty.native.workdir (MiB): available: 14648.79, total: 238127.00
+	Space in storage for java.io.tmpdir (MiB): available: 14648.79, total: 238127.00
+	Space in storage for workdir (MiB): available: 14648.79, total: 238127.00
+	JVM Flags: 6 total; -XX:+UseG1GC -XX:-UseAdaptiveSizePolicy -XX:-OmitStackTraceInFastThrow -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmn409m -Xmx2048m
+	Fabric Mods: 
+		animatica: Animatica 0.6.1+1.21.4
+		appleskin: AppleSkin 3.0.6+mc1.21.3
+		architectury: Architectury 15.0.3
+		autoreconnectrf: AutoReconnect 2.0.1+1.21.1
+		cloth-config: Cloth Config v17 17.0.144
+			cloth-basic-math: cloth-basic-math 0.6.1
+		cubes-without-borders: Cubes Without Borders 3.0.0+mc1.21.3
+		dynamic-island: Dynamic Island nextgen-alpha1
+			org_jetbrains_skiko_skiko-awt: skiko-awt 0.8.12
+			org_jetbrains_skiko_skiko-awt-runtime-windows-x64: skiko-awt-runtime-windows-x64 0.8.12
+		fabric-api: Fabric API 0.119.4+1.21.4
+			fabric-api-base: Fabric API Base 0.4.54+b47eab6b04
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.86+b1caf1e904
+			fabric-biome-api-v1: Fabric Biome API (v1) 15.0.6+b1c29d8e04
+			fabric-block-api-v1: Fabric Block API (v1) 1.0.31+7feeb73304
+			fabric-block-view-api-v2: Fabric BlockView API (v2) 1.0.20+9c49cc8c04
+			fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 2.0.8+7feeb73304
+			fabric-client-tags-api-v1: Fabric Client Tags 1.1.29+20ea1e2304
+			fabric-command-api-v1: Fabric Command API (v1) 1.2.62+f71b366f04
+			fabric-command-api-v2: Fabric Command API (v2) 2.2.41+e496eb1504
+			fabric-commands-v0: Fabric Commands (v0) 0.2.79+df3654b304
+			fabric-content-registries-v0: Fabric Content Registries (v0) 9.1.19+25d1a67604
+			fabric-convention-tags-v1: Fabric Convention Tags 2.1.20+7f945d5b04
+			fabric-convention-tags-v2: Fabric Convention Tags (v2) 2.14.1+aebda09404
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.3.6+7feeb73304
+			fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 1.6.2+e99da0f704
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 22.3.1+0f4e5f5504
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 4.0.10+7feeb73304
+			fabric-entity-events-v1: Fabric Entity Events (v1) 2.0.15+62245bef04
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 4.0.4+a4eebcf004
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.63+7d48d43904
+			fabric-item-api-v1: Fabric Item API (v1) 11.4.0+189dd6fe04
+			fabric-item-group-api-v1: Fabric Item Group API (v1) 4.2.2+fcb9601404
+			fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.57+7d48d43904
+			fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.55+df3654b304
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.5.4+bf2a60eb04
+			fabric-loot-api-v2: Fabric Loot API (v2) 3.0.38+3f89f5a504
+			fabric-loot-api-v3: Fabric Loot API (v3) 1.0.26+203e6b2304
+			fabric-message-api-v1: Fabric Message API (v1) 6.0.26+238a33c004
+			fabric-model-loading-api-v1: Fabric Model Loading API (v1) 4.3.0+ae23723504
+			fabric-networking-api-v1: Fabric Networking API (v1) 4.4.0+db5e668204
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 18.0.14+38b0d59804
+			fabric-particles-v1: Fabric Particles (v1) 4.0.14+7feeb73304
+			fabric-recipe-api-v1: Fabric Recipe API (v1) 8.1.1+640e77ae04
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 6.1.11+4a9c1ece04
+			fabric-renderer-api-v1: Fabric Renderer API (v1) 5.0.3+50f0feb204
+			fabric-renderer-indigo: Fabric Renderer - Indigo 2.0.3+50f0feb204
+			fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.58+73761d2e04
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.1.19+7feeb73304
+			fabric-rendering-v1: Fabric Rendering (v1) 10.2.1+0d31b09f04
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 5.0.13+203e6b2304
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 3.1.1+360374ac04
+			fabric-screen-api-v1: Fabric Screen API (v1) 2.0.38+7feeb73304
+			fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.118+7feeb73304
+			fabric-sound-api-v1: Fabric Sound API (v1) 1.0.32+7feeb73304
+			fabric-tag-api-v1: Fabric Tag API (v1) 1.0.7+7d48d43904
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 5.4.9+efa825c904
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 6.3.2+56e78b9b04
+		fabricloader: Fabric Loader 0.18.4
+			mixinextras: MixinExtras 0.5.0
+		ferritecore: FerriteCore 7.1.1
+		ias: In-Game Account Switcher 9.0.4
+		iris: Iris 1.8.8+mc1.21.4
+			io_github_douira_glsl-transformer: glsl-transformer 2.0.1
+			org_anarres_jcpp: jcpp 1.4.14
+			org_antlr_antlr4-runtime: antlr4-runtime 4.13.1
+		java: OpenJDK 64-Bit Server VM 21
+		minecraft: Minecraft 1.21.4
+		modmenu: Mod Menu 13.0.4
+		nuit: Nuit 1.0.0-beta.1+mc1.21.4
+		nuit_interop: Nuit Interop 1.0.0-beta.1+mc1.21.4
+		placeholder-api: Placeholder API 2.5.2+1.21.3
+		sodium: Sodium 0.6.13+mc1.21.4
+		southside: Southside Release
+			org_bouncycastle_bcprov-jdk15on: bcprov-jdk15on 1.70
+			org_java-websocket_java-websocket: Java-WebSocket 1.5.7
+			org_lwjgl_lwjgl-nanovg: lwjgl-nanovg 3.3.3
+			org_lwjgl_lwjgl-nanovg_natives-windows: lwjgl-nanovg 3.3.3
+		uuidget: Killsay Reborn nextgen-3.9
+		viafabricplus: ViaFabricPlus 4.0.5-BACKPORT
+			com_github_oryxel_cubeconverter: CubeConverter 916cadb12a
+			com_google_code_findbugs_jsr305: jsr305 3.0.2
+			com_vdurmont_semver4j: semver4j 3.1.0
+			com_viaversion_viaaprilfools-common: viaaprilfools-common 4.0.2-20250426.140810-22
+			com_viaversion_viabackwards-common: viabackwards-common 5.3.3-20250426.185209-1
+			com_viaversion_vialoader: vialoader 4.0.3-20250426.141011-6
+			com_viaversion_viaversion-common: viaversion-common 5.3.3-20250426.143637-8
+			de_florianmichael_classic4j: Classic4J 2.1.1-SNAPSHOT
+			io_jsonwebtoken_jjwt-api: jjwt-api 0.12.6
+			io_jsonwebtoken_jjwt-gson: jjwt-gson 0.12.6
+			io_jsonwebtoken_jjwt-impl: jjwt-impl 0.12.6
+			io_netty_netty-codec-http: netty-codec-http 4.2.0
+			net_jodah_expiringmap: expiringmap 0.5.10
+			net_lenni0451_commons_httpclient: httpclient 1.6.0
+			net_lenni0451_mcstructs-bedrock_forms: forms 2.0.0
+			net_lenni0451_mcstructs-bedrock_text: text 2.0.0
+			net_lenni0451_reflect: Reflect 1.4.0
+			net_raphimc_minecraftauth: MinecraftAuth 4.1.1
+			net_raphimc_viabedrock: ViaBedrock 0.0.16-20250404.165607-5
+			net_raphimc_vialegacy: ViaLegacy 3.0.10-20250426.140714-8
+			org_cloudburstmc_netty_netty-transport-raknet: netty-transport-raknet 1.0.0.CR3-SNAPSHOT
+			org_lz4_lz4-pure-java: lz4-pure-java 1.8.0
+			team_unnamed_mocha: mocha 3.0.1
+			viafabricplus-api: ViaFabricPlus API 4.0.5-BACKPORT
+			viafabricplus-api-legacy: ViaFabricPlus API Legacy 4.0.5-BACKPORT
+			viafabricplus-visuals: ViaFabricPlus Visuals 4.0.5-BACKPORT
+		yet_another_config_lib_v3: YetAnotherConfigLib 3.8.2+1.21.4-fabric
+			com_twelvemonkeys_common_common-image: common-image 3.12.0
+			com_twelvemonkeys_common_common-io: common-io 3.12.0
+			com_twelvemonkeys_common_common-lang: common-lang 3.12.0
+			com_twelvemonkeys_imageio_imageio-core: imageio-core 3.12.0
+			com_twelvemonkeys_imageio_imageio-metadata: imageio-metadata 3.12.0
+			com_twelvemonkeys_imageio_imageio-webp: imageio-webp 3.12.0
+			org_quiltmc_parsers_gson: gson 0.2.1
+			org_quiltmc_parsers_json: json 0.2.1
+	Loaded Shaderpack: (off)
+	Launched Version: 1.21.4-ss
+	Launcher name: PCL
+	Backend library: LWJGL version 3.3.3-snapshot
+	Backend API: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 3.2.0 NVIDIA 596.36, NVIDIA Corporation
+	Window size: 1920x1081
+	GFLW Platform: win32
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Universe: 400921fb54442d18
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Render Distance: 7/7 chunks
+	Resource Packs: vanilla, fabric, animatica, appleskin (incompatible), autoreconnectrf, cloth-config, com_viaversion_viaaprilfools-common, com_viaversion_viabackwards-common, com_viaversion_viaversion-common, cubes-without-borders, dynamic-island, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, ias, iris, modmenu, net_raphimc_viabedrock, net_raphimc_vialegacy, nuit, nuit_interop, placeholder-api, sodium, southside, uuidget, viafabricplus, viafabricplus-visuals, yet_another_config_lib_v3 (incompatible), file/[1.21.4]32x顾城材质V16.zip, file/§cCozyUI§b+ §7v1.9 §0.zip
+	Current Language: zh_cn
+	Locale: zh_CN
+	System encoding: GBK
+	File encoding: COMPAT
+	CPU: 20x 13th Gen Intel(R) Core(TM) i7-13700H
+	Server Running: true
+	Player Count: 1 / 8; [class_3222['Bed_Spacekiller_'/13, l='ServerLevel[新的世界]', x=369.17, y=76.00, z=606.05]]
+	Active Data Packs: vanilla, fabric, fabric-convention-tags-v2
+	Available Data Packs: fabric, fabric-convention-tags-v2, minecart_improvements, redstone_experiments, trade_rebalance, vanilla
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: -3861305454902983150
+	Suppressed Exceptions: ~~NONE~~

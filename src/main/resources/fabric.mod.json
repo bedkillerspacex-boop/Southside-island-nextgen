@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "dynamic-island",
+  "version": "nextgen-alpha1",
+  "name": "Dynamic Island",
+  "description": "A dynamic island HUD with glassmorphism effect showing current time",
+  "authors": [
+    "Southside"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/dynamic-island/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.southside.dynamicisland.DynamicIslandMod"
+    ]
+  },
+  "mixins": [
+    "dynamic-island.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+  }
+}
